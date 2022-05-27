@@ -1,3 +1,5 @@
+
+
 import { useEffect, useState } from "react";
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom";
@@ -55,7 +57,7 @@ color: #333;
   }
 `;
 
-export const Quize=()=>{
+export const Quize2=()=>{
   var c=0;
   var c1=0;
 const [problem, setProblem]= useState("")
@@ -79,13 +81,13 @@ let state = {
         id1=setInterval(()=>{
           setTtime((prev)=>{
               if(prev===0.00){
-                navigate("/")
+                navigate("/final")
                
                   clearInterval(id1);
                   clearInterval(id);
                  
                   return(
-                      <p style={{color:"red", fontSize:"1.5vw"}}>contest ended</p>
+                    <p style={{color:"red", fontSize:"1.5vw"}}>contest ended</p>
                   );
               }
               return prev-1;
