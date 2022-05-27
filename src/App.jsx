@@ -7,6 +7,7 @@ import { Quize } from './components/quize';
 import { Navbar } from './components/Navbar';
 import { Quize2 } from './components/quize2';
 import { FinalScore } from './components/Final_score';
+import { FirstComp } from './components/firstcomplete';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     <Route path='/quize' element={<Quize />} />
     <Route path='/quize2' element={<Quize2 />} />
     <Route path='/final' element={<FinalScore />} />
+    <Route path='/first' element={<FirstComp />} />
   </Routes>
     
     </div>
