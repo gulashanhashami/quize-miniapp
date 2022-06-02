@@ -1,6 +1,7 @@
 
 import styled from "styled-components"
-
+import { Quize } from "./quize";
+import { useNavigate } from "react-router-dom";
 const Stylediv= styled.div`
 .main1{
     width:90%;
@@ -55,6 +56,15 @@ p{
 }
 `;
 export const Home=()=>{
+const navigate= useNavigate();
+
+
+function goAssess(){
+    navigate("/quize")
+}
+function goAssess1(){
+    navigate("/quize2")
+}
 
 
 return (
@@ -64,12 +74,18 @@ return (
   <div className="section">
   <div className="ass">
        <p>Assesment1</p>
-   </div><span><button className="btn">Start test</button></span>
+   </div><span><button className="btn" onClick={()=>{
+    goAssess()
+   }
+   }>Start test</button></span>
   </div>
    <div className="section">
    <div  className="ass">
        <p>Assessment2</p>
-   </div><span><button className="btn">Start test</button></span>
+   </div><span><button className="btn" onClick={()=>{
+    goAssess1()
+   }
+   }>Start test</button></span>
    </div>
   </div>
   </div>
