@@ -55,6 +55,10 @@ color: #333;
   .reset-button:focus {
     background-color: #00275a;
   }
+  h1{
+    font-size:1.5vw;
+    color:green;
+}
 `;
 
 export const Quize2=()=>{
@@ -63,7 +67,7 @@ export const Quize2=()=>{
 const [problem, setProblem]= useState("")
 const [field, setField]= useState()
 const [cdata, setCdata] = useState({});
-const [total_time, setTtime]= useState(20);
+const [total_time, setTtime]= useState(400);
 const [time, setTime]= useState(20); 
 const navigate= useNavigate();
 
@@ -75,7 +79,7 @@ let state = {
   wrongAnswers: 0
 }
 
-
+//code for total assessment time limit
     useEffect(()=>{
         updateProblem(); 
         id1=setInterval(()=>{
@@ -101,7 +105,7 @@ let state = {
           }
        
     },[])
-
+//code for one question time limit
     useEffect(()=>{
       id=setInterval(()=>{
         setTime((prev)=>{
@@ -121,7 +125,7 @@ let state = {
 
 
    
-    
+     //code for update problem
     function updateProblem() {
 
       state.currentProblem = generateProblem()
@@ -139,7 +143,7 @@ let state = {
     function generateNumber(max) {
       return Math.floor(Math.random() * (max + 1))
     }
-    
+     //code for generate problem
     function generateProblem() {
       
       return {
@@ -148,7 +152,7 @@ let state = {
         operator: ['+', '-', 'x'][generateNumber(2)]
       }
     }
-    var arr=[];
+ //code for handle submit
     function handleSubmit(e) {
       e.preventDefault()
       updateProblem()
@@ -170,23 +174,27 @@ let state = {
 return (
     <Stylediv>
       <div className="outdiv">
+        <h1>Assessment2 is running</h1>
      <div className="main-ui">
        <p>Total time :{(total_time/60).toFixed(2)} minutes</p>
        <p>Time :{time} seconds</p>
   <p className="problem">{problem}</p>
 
   <form className="our-form" onSubmit={handleSubmit}>
-    <input type="text" className="our-field" onChange={(e)=>{setField(e.target.value)}} />
+    <input type="text" className="our-field" onChange={(e)=>{setField(e.target.value)}} placeholder="enter your answer" />
     <button>Submit</button>
   </form>
    <br />
    <button className="reset-button" onClick={()=>{
+      let res=window.confirm("Are you sure, you want to reset it")
+      if(res){
    clearInterval(id);
    clearInterval(id1);
-   setTtime(20)
+   setTtime(400)
    setTime(20)
    updateProblem()
    }
+  }
    }>Reset the Assessment</button>
 </div>
 </div>

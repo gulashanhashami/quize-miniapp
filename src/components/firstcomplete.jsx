@@ -1,4 +1,6 @@
 
+
+
 import styled from "styled-components";
 import { Navigate, useNavigate } from "react-router-dom";
 const Stylediv= styled.div`
@@ -11,12 +13,13 @@ const Stylediv= styled.div`
 .innerd{
     width:85%;
     height:83%;
-    margin-top: 10vh;
     padding-top:5%;
+    margin-top: 10vh;
     background-color: pink;
     border: 1px solid pink; 
 }
 .btn{
+    margin-top: 10vh;
     font-size: 1.2rem;
     background-color: #004094;
     border: none;
@@ -33,7 +36,7 @@ h1{
 }
 
 `;
-export const FinalScore=()=>{
+export const FirstComp=()=>{
 const navigate=useNavigate();
 
 function goHome(){
@@ -43,7 +46,7 @@ function goHome(){
      <Stylediv>
          <div className="main">
              <div className="innerd">
-         <h1>Congratulation!, your assessment has been completed</h1>
+         <h1>Congratulation!, your assessment1 has completed, please start assessment2</h1>
         
         <button className="btn" onClick={goHome}>Go to home page</button>
         </div>
