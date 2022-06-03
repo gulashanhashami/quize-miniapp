@@ -101,7 +101,7 @@ export const Navbar=()=>{
                     <Link to={""}>
                    {/* <p className="pin">Enter Pincode</p>  */}
                    </Link>
-                   <p className="pin" style={{color:"red"}}>Make future better</p>
+                   <p className="pin" style={{color:"red", fontSize: "1.2vw"}}>Make future better</p>
                 </div>
             </div>
             </div>
