@@ -162,9 +162,9 @@ let state = {
       if (cdata.operator == "x") correctAnswer = cdata.numberOne * cdata.numberTwo
      
         if ((+field)=== correctAnswer) {
-        
+           alert("Your answer is correct")
       } else {
-         
+         alert("Your answer is wrong")
       }
     }
     
